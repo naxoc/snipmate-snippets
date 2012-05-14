@@ -1,4 +1,4 @@
 snippet elo
-	error_log(print_r(${1}, TRUE));
+	error_log(__FILE__ . ': ' . print_r(${1}, TRUE));
 snippet gdv
-	get_defined_vars();
+	get_defined_vars()

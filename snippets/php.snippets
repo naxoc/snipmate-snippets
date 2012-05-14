@@ -1,7 +1,6 @@
 snippet php
 	<?php
 	${1}
-	?>
 snippet phpil
 	<?php ${1} ?>
 snippet ec
@@ -96,7 +95,6 @@ snippet doc_fp
 	 * ${1:undocumented function}
 	 *
 	 * @return ${2:void}
-	 * @author ${3:`g:snips_author`}
 	 */${4}
 # Function signature
 snippet doc_s
@@ -113,10 +111,9 @@ snippet doc_f
 	 * ${4:undocumented function}
 	 *
 	 * @return ${5:void}
-	 * @author ${6:`g:snips_author`}
 	 */
-	${1}function ${2}(${3})
-	{${7}
+	${1}function ${2}(${3}) {
+	  ${7}
 	}
 # Header
 snippet doc_h
