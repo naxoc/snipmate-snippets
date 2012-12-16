@@ -3,92 +3,11 @@ snippet php
 	${1}
 snippet phpil
 	<?php ${1} ?>
-snippet ec
-	echo "${1:string}"${2};
-snippet ethis
-	<?php echo $this->${1:something}; ?>
-snippet inc
-	include '${1:file}';${2}
-snippet inc1
-	include_once '${1:file}';${2}
-snippet req
-	require '${1:file}';${2}
-snippet req1
-	require_once '${1:file}';${2}
-# $GLOBALS['...']
-snippet globals
-	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
-snippet G
-	$GLOBALS['${1:variable}']
-snippet $_ COOKIE['...']
-	$_COOKIE['${1:variable}']${2}
-snippet $_ ENV['...']
-	$_ENV['${1:variable}']${2}
-snippet $_ FILES['...']
-	$_FILES['${1:variable}']${2}
-snippet $_ Get['...']
-	$_GET['${1:variable}']${2}
-snippet $_ POST['...']
-	$_POST['${1:variable}']${2}
-snippet $_ REQUEST['...']
-	$_REQUEST['${1:variable}']${2}
-snippet $_ SERVER['...']
-	$_SERVER['${1:variable}']${2}
-snippet $_ SESSION['...']
-	$_SESSION['${1:variable}']${2}
 # Start Docblock
 snippet /*
 	/**
 	 * ${1}
 	 */
-# Class - post doc
-snippet doc_cp
-	/**
-	 * ${1:undocumented class}
-	 *
-	 * @package ${2:default}
-	 * @subpackage ${3:default}
-	 * @author ${4:`g:snips_author`}
-	 */${5}
-# Class Variable - post doc
-snippet doc_vp
-	/**
-	 * ${1:undocumented class variable}
-	 *
-	 * @var ${2:string}
-	 */${3}
-# Class Variable
-snippet doc_v
-	/**
-	 * ${3:undocumented class variable}
-	 *
-	 * @var ${4:string}
-	 */
-	${1:var} $${2};${5}
-# Class
-snippet doc_c
-	/**
-	 * ${3:undocumented class}
-	 *
-	 * @package ${4:default}
-	 * @subpackage ${5:default}
-	 * @author ${6:`g:snips_author`}
-	 */
-	${1:}class ${2:}
-	{
-		${7}
-	} // END $1class $2
-# Constant Definition - post doc
-snippet doc_dp
-	/**
-	 * ${1:undocumented constant}
-	 */${2}
-# Constant Definition
-snippet doc_d
-	/**
-	 * ${3:undocumented constant}
-	 */
-	define(${1}, ${2});${4}
 # Function - post doc
 snippet doc_fp
 	/**
@@ -96,47 +15,16 @@ snippet doc_fp
 	 *
 	 * @return ${2:void}
 	 */${4}
-# Function signature
-snippet doc_s
-	/**
-	 * ${4:undocumented function}
-	 *
-	 * @return ${5:void}
-	 * @author ${6:`g:snips_author`}
-	 */
-	${1}function ${2}(${3});${7}
 # Function
 snippet doc_f
 	/**
-	 * ${4:undocumented function}
+	 * ${4:Undocumented function.}
 	 *
 	 * @return ${5:void}
 	 */
 	${1}function ${2}(${3}) {
 	  ${7}
 	}
-# Header
-snippet doc_h
-	/**
-	 * ${1}
-	 *
-	 * @author ${2:`g:snips_author`}
-	 * @version ${3:$Id$}
-	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
-	 * @package ${5:default}
-	 */
-	
-# Interface
-snippet doc_i
-	/**
-	 * ${2:undocumented class}
-	 *
-	 * @package ${3:default}
-	 * @author ${4:`g:snips_author`}
-	 */
-	interface ${1:}
-	{${5}
-	} // END interface $1
 # class ...
 snippet class
 	/**
@@ -153,9 +41,6 @@ snippet class
 # define(...)
 snippet def
 	define('${1}'${2});${3}
-# defined(...)
-snippet def?
-	${1}defined('${2}')${3}
 snippet wh
 	while (${1:/* condition */}) {
 		${2:// code...}
@@ -169,24 +54,6 @@ snippet if
 	if (${1:/* condition */}) {
 		${2:// code...}
 	}
-snippet ifil
-	<?php if (${1:/* condition */}): ?>
-		${2:<!-- code... -->}
-	<?php endif; ?>
-snippet ife
-	if (${1:/* condition */}) {
-		${2:// code...}
-	} else {
-		${3:// code...}
-	}
-	${4}
-snippet ifeil
-	<?php if (${1:/* condition */}): ?>
-		${2:<!-- html... -->}
-	<?php else: ?>
-		${3:<!-- html... -->}
-	<?php endif; ?>
-	${4}
 snippet else
 	else {
 		${1:// code...}
@@ -220,18 +87,10 @@ snippet foreach
 	foreach ($${1:variable} as $${2:value}) {
 		${3:// code...}
 	}
-snippet foreachil
-	<?php foreach ($${1:variable} as $${2:value}): ?>
-		${3:<!-- html... -->}
-	<?php endforeach; ?>
 snippet foreachk
 	foreach ($${1:variable} as $${2:key} => $${3:value}) {
 		${4:// code...}
 	}
-snippet foreachkil
-	<?php foreach ($${1:variable} as $${2:key} => $${3:value}): ?>
-		${4:<!-- html... -->}
-	<?php endforeach; ?>
 snippet fun
 	${1:public }function ${2:FunctionName}(${3})
 	{
@@ -253,17 +112,6 @@ snippet lambda
 # pre_dump();
 snippet pd
 	echo '<pre>'; var_dump(${1}); echo '</pre>';
-# pre_dump(); die();
-snippet pdd
-	echo '<pre>'; var_dump(${1}); echo '</pre>'; die(${2:});
-snippet vd
-	var_dump(${1});
-snippet vdd
-	var_dump(${1}); die(${2:});
-snippet http_redirect
-	header ("HTTP/1.1 301 Moved Permanently"); 
-	header ("Location: ".URL); 
-	exit();
 # Getters & Setters
 snippet getset
 	/**
